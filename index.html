@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A simple and stylish resume builder website using HTML, CSS, and JavaScript.">
+  <meta name="keywords" content="Resume Builder, HTML, CSS, JavaScript, PDF">
+  <meta name="author" content="Your Name">
+  <title>Resume Builder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+</head>
+<body>
+  <div class="container">
+    <div class="theme-toggle">
+      <button onclick="toggleTheme()"><i class="fas fa-adjust"></i> Toggle Theme</button>
+    </div>
+
+    <div class="form-section">
+      <h2><i class="fas fa-file-alt"></i> Resume Builder</h2>
+      <input type="text" id="name" placeholder="Full Name" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="tel" id="phone" placeholder="Phone Number" required>
+      <textarea id="summary" placeholder="Summary" required></textarea>
+      <textarea id="experience" placeholder="Experience" required></textarea>
+      <textarea id="education" placeholder="Education" required></textarea>
+      <textarea id="skills" placeholder="Skills" required></textarea>
+      <button onclick="generateResume()"><i class="fas fa-play"></i>Generate Resume</button>
+      <button onclick="downloadPDF()"><i class="fas fa-download"></i>Download PDF</button>
+    </div>
+
+    <div class="resume-section" id="resume" style="display:none">
+      <h2><i class="fas fa-user"></i> Your Resume</h2>
+      <p><strong>Name:</strong> <span id="r-name"></span></p>
+      <p><strong>Email:</strong> <span id="r-email"></span></p>
+      <p><strong>Phone:</strong> <span id="r-phone"></span></p>
+      <p><strong>Summary:</strong> <span id="r-summary"></span></p>
+      <p><strong>Experience:</strong> <span id="r-experience"></span></p>
+      <p><strong>Education:</strong> <span id="r-education"></span></p>
+      <p><strong>Skills:</strong> <span id="r-skills"></span></p>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="theme.js"></script>
+  <script src="validation.js"></script>
+  <script src="utils.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
